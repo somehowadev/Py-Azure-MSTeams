@@ -54,18 +54,16 @@ def AZConnect():
 	tokens = ConnectionHandler.AzureConnection()
 	return(tokens)
 
+def ensureConnection():
+	conn = ConnectionHandler.AzureConnection()
+	TokenCheck = ConnectionHandler.TokenCheck(conn)
+	while TokenCheck == "Invalid":
+		conn = ConnectionHandler.AzureConnection()
+	while TokenCheck == "Valid":
+		Comparison(conn)
+	return()
+
+
 if __name__ == "__main__":
 	
-	status = 1
-	 
-	while status:
-		# This is when I get the token wastefully
-		azconnection = AZConnect()
-		tokencheck = ConnectionHandler.TokenCheck(azconnection)
-		if tokencheck == "Invalid":
-			
-			azconnection = AZConnect()
-
-		else:
-			Comparison(azconnection)
-			continue
+	ensureConnection()
