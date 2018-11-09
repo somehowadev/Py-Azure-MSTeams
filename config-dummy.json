@@ -1,0 +1,26 @@
+Rename this file to "config.json" and fill out the variables (don't forget the resourcegroup/resourcegroupresources)
+{
+	"AzureApp":
+		{
+		"Client_ID": "X",
+		"Client_Secret": "X",
+		"scope": "https://management.azure.com/.default",
+		"tenant": "X",
+		"grant_type": "client_credentials"
+		},
+	"AzureResources":
+		{
+		"resourcegroupresources": "https://management.azure.com/subscriptions/"SubscriptionID"/"ResourceGroupName"/resources?api-version-2017-05-10",
+		"resourcegroup": "https://management.azure.com/subscriptions/"SubscriptionID"/"ResourceGroupName"?api-version-2017-05-10"" 
+		},	
+	"AzureStorage":
+		{
+		"Account_Name": "X",
+		"Key": "X",
+		"Name": "KnownState"
+		},
+	"TeamsWebhook":
+		{
+		"URL":"X"
+		}
+}
