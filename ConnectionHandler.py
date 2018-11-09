@@ -36,8 +36,8 @@ def TokenCheck(passedtoken):
 		return("Invalid")
 		# aka they match, token now invalid
 	else:
-		print(tokenexpired)
-		print(strippedtimestamp)
+		#print(tokenexpired)
+		#print(strippedtimestamp)
 		return("Valid")
 
 def resources():
