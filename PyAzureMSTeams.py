@@ -47,7 +47,7 @@ def Comparison(access):
 		print(deletion)
 
 	else:
-		print("No orphans")
+		print("No orphaned resources")
 
 def AZConnect():
 	global tokens
@@ -62,7 +62,6 @@ if __name__ == "__main__":
 		# This is when I get the token wastefully
 		azconnection = AZConnect()
 		tokencheck = ConnectionHandler.TokenCheck(azconnection)
-		print(tokencheck)
 		if tokencheck == "Invalid":
 			
 			azconnection = AZConnect()
