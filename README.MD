@@ -16,6 +16,10 @@ python PyAzureMSTeams.py
 
 ```
 
+## Running inside a WebApp
+
+To run it inside a web app as a continuous job, install Python 3.6+ on the App service plan. Create a .zip archive of this repository and upload it as a continuous web job. It should download the required libraries on each load. 
+
 Though this application doesn't store anything locally and can deal with restarts/etc, better to keep it somewhere long running.
 
 ## Prerequisites
