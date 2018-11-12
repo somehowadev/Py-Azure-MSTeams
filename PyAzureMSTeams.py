@@ -45,22 +45,26 @@ def Comparison(access):
 	if len(diffcheck) != 0:
 		deletion = ConnectionHandler.DeleteEntity(diffcheck)
 		print(deletion)
-
 	else:
-		print("No orphaned resources")
-
+		print("No orphans")
+	# Slow the rate of requests down.
+	time.sleep(10)
+	
 def AZConnect():
 	global tokens
 	tokens = ConnectionHandler.AzureConnection()
 	return(tokens)
 
 def ensureConnection():
-	conn = ConnectionHandler.AzureConnection()
-	TokenCheck = ConnectionHandler.TokenCheck(conn)
-	while TokenCheck == "Invalid":
+	global conn
+	s = 1
+	while s:
 		conn = ConnectionHandler.AzureConnection()
-	while TokenCheck == "Valid":
-		Comparison(conn)
+		TokenCheck = ConnectionHandler.TokenCheck(conn)
+		while TokenCheck == "Invalid":
+			conn = ConnectionHandler.AzureConnection()
+		while TokenCheck == "Valid":
+			Comparison(conn)
 	return()
 
 
