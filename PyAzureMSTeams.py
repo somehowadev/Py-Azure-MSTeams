@@ -61,10 +61,16 @@ def ensureConnection():
 	while s:
 		conn = ConnectionHandler.AzureConnection()
 		TokenCheck = ConnectionHandler.TokenCheck(conn)
-		while TokenCheck == "Invalid":
-			conn = ConnectionHandler.AzureConnection()
-		while TokenCheck == "Valid":
-			Comparison(conn)
+		print(TokenCheck)
+		Comparison(conn)
+		#while TokenCheck == "Valid":
+		#	Comparison(conn)
+		#	TokenCheck = ConnectionHandler.TokenCheck(conn)
+		#	print(TokenCheck)
+		#	if TokenCheck == "Invalid":
+		#		conn = ConnectionHandler.AzureConnection()
+		#	Comparison(conn)
+		
 	return()
 
 
