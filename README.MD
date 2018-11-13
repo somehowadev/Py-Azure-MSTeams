@@ -122,6 +122,8 @@ I'm sure I've missing something so if anyone has any ideas, I'd appreciate it. I
 
 5. The 1 - 1 mapping, I made this based on my own environment, where we don't have many resource groups, one of which is prod and we focus on placing all prod stuff in that resource group. Your setup might be different and thus might need multiple instances to cover your environment, I'll also make the argument that it's objectively better to not have many resource groups and to segment by environment.
 
+6. Resource names shouldn't have a backslash in them or any other characters that don't comply with Azure Storage tables. (Can look into this, I think the restriction is just based on the partition/row key).
+
 
 ## Tips 
 
@@ -134,3 +136,4 @@ Download the MS Teams app and follow the channel (right click on channel -> foll
 1. Fix token handling (probably rework it)
 2. Offer option to do 1 - many rather than 1.1
 3. Support for running multipe instances at the same time for some simple failover scenarios.
+
